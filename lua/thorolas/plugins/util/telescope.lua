@@ -42,6 +42,7 @@ return {
 
         kw.group("<leader>f", "file")
         kw.command("<leader>ff", "Telescope find_files", "Find Files")
+        kw.command("<leader>fo", "Telescope oldfiles", "Recent Files")
         kw.command("<leader>ft", "Telescope live_grep", "Search Text In Files");
         kw.command("<leader>fb", "Telescope file_browser path=%:p:h select_buffer=true", "Open File Browser");
         kw.command("<leader>fp", "Telescope project", "Show Projects");

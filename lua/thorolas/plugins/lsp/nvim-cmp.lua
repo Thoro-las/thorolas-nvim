@@ -111,7 +111,6 @@ return {
             })
         })
 
-        -- Optional: Keybinding to open telescope snippet browser
         vim.keymap.set("n", "<leader>ss", "<cmd>Telescope luasnip<CR>", { desc = "Search snippets" })
     end,
 }

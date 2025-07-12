@@ -22,3 +22,11 @@ kw.command("<leader>gh", "lua vim.lsp.buf.hover()", "LSP Hover")
 kw.command("<leader>ga", "lua vim.lsp.buf.code_action()", "Code Action")
 kw.command("<leader>gd", "lua vim.diagnostic.open_float()", "Show Diagnostics")
 kw.command("<leader>gf", "lua vim.lsp.buf.format({async = true})", "Format Document")
+
+kw.mapd("n", "<leader>tt", function()
+    local cwd = vim.fn.expand("%:p:h")
+    vim.fn.jobstart({ "bspkitty" }, {
+        cwd = cwd,
+        detach = true,
+    })
+end, "Open Kitty")
