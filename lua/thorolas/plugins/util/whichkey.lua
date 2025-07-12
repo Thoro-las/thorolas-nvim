@@ -2,56 +2,6 @@ return {
     'folke/which-key.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons', 'echasnovski/mini.icons' },
     config = function()
-        local mappings = {
-            mode = "n",
-            buffer = nil,
-            silent = true,
-            noremap = true,
-            nowait = true,
-            --
-            { "<leader>w",   "<cmd>w!<CR>", desc = "Save" },
-            { "<leader>x",   "<cmd>bdelete<CR>", desc = "Kill Buffer" },
-            --
-            --
-            { "<leader>q",   group = "quit" },
-            { "<leader>qw",  "<cmd>wqall!<CR>", desc = "Save All & Quit" },
-            { "<leader>qq",  "<cmd>qall!<CR>", desc = "Cancel & Quit All" },
-
-            { "<leader>c",   group = "configuration" },
-            { "<leader>cc",  "<cmd>e ~/.config/nvim<CR>", desc = "Open Configuration" },
-            { "<leader>cp",  "<cmd>e ~/.config/nvim/lua/thorolas/plugins<CR>", desc = "Open Plugins Configuration" },
-            { "<leader>cs",  "<cmd>e ~/.config/nvim/lua/thorolas/snippets<CR>", desc = "Open Snippets Configuration" },
-
-            -- { "<leader>cl",  "<cmd>Lazy<CR>", desc = "Plugin Manager" },
-            --
-            -- { "<leader>g",   group = "lsp" },
-            -- { "<leader>gh",  "<cmd>lua vim.lsp.buf.hover()<CR>", desc = "LSP Hover" },
-            -- { "<leader>gd",  "<cmd>lua vim.diagnostic.open_float()<CR>", desc = "Show Diagnostics" },
-            -- { "<leader>gc",  "<cmd>lua vim.lsp.buf.rename()<CR>", desc = "Rename" },
-            -- { "<leader>gf",  "<cmd>lua vim.lsp.buf.format({async = true})<CR>", desc = "Format Document" },
-            -- { "<leader>ga",  "<cmd>lua vim.lsp.buf.code_action()<CR>", desc = "Code Action" },
-            --
-            -- { "<leader>r",   group = "runners" },
-            --
-            -- { "<leader>rt",  group = "typst" },
-            -- { "<leader>rtt", "<cmd>TypstWatch<CR>", desc = "Start Typst Watch" },
-            -- { "<leader>rtp", "<cmd>TypstPreview<CR>", desc = "Start Typst Preview" },
-            -- { "<leader>rtu", "<cmd>TypstPreviewUpdate<CR>", desc = "Refresh Typst Preview" },
-            -- { "<leader>rts", "<cmd>TypstPreviewStop<CR>", desc = "Stop Typst Preview" },
-            --
-            -- { "<leader>rr",  group = "coderunner" },
-            -- { "<leader>rrr", "<cmd>RunCode<CR>", desc = "Run The Current File" },
-            --
-            -- { "<leader>rp",  group = "processing" },
-            -- { "<leader>rpr", "<cmd>ProcessingRun<CR>", desc = "Run Processing File" },
-            -- { "<leader>rpp", "<cmd>ProdessingPresent<CR>", desc = "Run Processing Present Mode" },
-            -- { "<leader>rpe", "<cmd>ProcessingExport<CR>", desc = "Export Processing Executable" },
-            --
-            -- { "<leader>re",  group = "exercism" },
-            -- { "<leader>ret", "<cmd>!exercism test<CR>", desc = "Run Exercism Test" },
-            -- { "<leader>res", "<cmd>!exercism submit<CR>", desc = "Submit To Exercism" },
-        };
-
         local setup = {
             plugins = {
                 marks = true,
@@ -86,6 +36,5 @@ return {
 
         local whichkey = require('which-key');
         whichkey.setup(setup)
-        whichkey.add(mappings)
     end
 }

@@ -4,8 +4,8 @@ return {
 		require('hop').setup({ keys = 'etovxqpdygfblzhckisuran', term_seq_bias = 0.5 }); 
 
         local kw = require("thorolas.utility.keymaps")
-		kw.map('n', 'F', 'f', { desc = 'Old Find' });
-		kw.map('n', 't', ':HopPattern<CR>', { noremap = true, desc = 'Hop To Pattern' });
-		kw.map({ 'n', 's', 'x', 'v' }, 'f', ':HopChar1<CR>', { desc = 'Hop To Character' });
+		kw.mapd('n', 'F', 'f', 'Old Find' )
+		kw.mapd({ 'n', 's', 'x', 'v' }, 'f', ':HopChar1<CR>', 'Hop To Character' )
+        kw.mapnr('n', 't', ':HopPattern<CR>', 'Hop To Pattern');
 	end
 };
