@@ -7,7 +7,7 @@ return function(capabilities)
                     version = "LuaJIT", -- for Neovim
                 },
                 diagnostics = {
-                    globals = { "vim" }, -- avoid "undefined global 'vim'" warnings
+                    globals = { "vim" }, -- avoid "undefined global "vim"" warnings
                 },
                 workspace = {
                     library = vim.api.nvim_get_runtime_file("", true),

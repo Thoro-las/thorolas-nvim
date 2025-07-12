@@ -1,7 +1,7 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     config = function()
-        local tsconfig = require('nvim-treesitter.configs');
+        local tsconfig = require("nvim-treesitter.configs");
         tsconfig.setup({
             ensure_installed = {
                 "lua",

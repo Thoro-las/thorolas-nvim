@@ -1,7 +1,7 @@
 return {
-    'windwp/nvim-autopairs',
+    "windwp/nvim-autopairs",
     config = function()
-        local pairs = require('nvim-autopairs');
+        local pairs = require("nvim-autopairs");
         pairs.setup({
             disable_filetype = { "TelescopePrompt", "spectre_panel" },
             check_ts = true,
@@ -13,8 +13,8 @@ return {
 
             fast_wrap = {
                 map = "<M-e>",
-                chars = { "{", "[", "(", '"', "'" },
-                pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], "%s+", ""),
+                chars = { "{", "[", "(", "\'", "\"" },
+                pattern = string.gsub([[ [%"%"%)%>%]%)%}%,] ]], "%s+", ""),
                 offset = 0,
 
                 end_key = "$",

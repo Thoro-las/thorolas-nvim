@@ -15,5 +15,17 @@ return {
                 vim.notify("Failed to load LSP server: " .. filename)
             end
         end
+
+        local kw = require("thorolas.utility.keymaps")
+
+        kw.group("<leader>g", "lsp")
+        kw.command("<leader>gr", "lua vim.lsp.buf.rename()", "Rename")
+        kw.command("<leader>gh", "lua vim.lsp.buf.hover()", "LSP Hover")
+        kw.command("<leader>ga", "lua vim.lsp.buf.code_action()", "Code Action")
+        kw.command("<leader>gf", "lua vim.lsp.buf.format({async = true})", "Format Document")
+        kw.command("<leader>gd", "lua vim.diagnostic.open_float()", "Show Diagnostic")
+        kw.command("<leader>gi", "lua vim.lsp.buf.implementation()", "Show Implementation")
+        kw.command("<leader>gs", "lua vim.lsp.buf.document_symbol()", "Show Document Symbol")
+        kw.command("<leader>gz", "lua vim.lsp.buf.references()", "Show References")
     end,
 }

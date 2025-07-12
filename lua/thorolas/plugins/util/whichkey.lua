@@ -1,6 +1,6 @@
 return {
-    'folke/which-key.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons', 'echasnovski/mini.icons' },
+    "folke/which-key.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons", "echasnovski/mini.icons" },
     config = function()
         local setup = {
             plugins = {
@@ -34,7 +34,7 @@ return {
             show_help = true,
         };
 
-        local whichkey = require('which-key');
+        local whichkey = require("which-key");
         whichkey.setup(setup)
     end
 }

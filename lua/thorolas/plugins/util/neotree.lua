@@ -20,7 +20,7 @@ return {
             local path = node.path
             local name = node.name
 
-            local answer = vim.fn.confirm("Trash '" .. name .. "'?", "&Yes\n&No", 2)
+            local answer = vim.fn.confirm("Trash " .. name .. "?", "&Yes\n&No", 2)
             if answer == 1 then
                 vim.fn.jobstart({ "trash", path }, {
                     detach = true,
