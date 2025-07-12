@@ -3,9 +3,16 @@ return {
 
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-path",
+        "hrsh7th/cmp-cmdline",
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
         "onsails/lspkind.nvim",
+
+        -- Snippet helpers
+        "rafamadriz/friendly-snippets",
+        "benfowler/telescope-luasnip.nvim"
     },
 
     config = function()
@@ -13,6 +20,12 @@ return {
         local luasnip = require("luasnip")
         local lspkind = require("lspkind")
         local compare = require("cmp.config.compare")
+
+        -- Load VSCode-style snippets (friendly-snippets)
+        require("luasnip.loaders.from_vscode").lazy_load()
+
+        -- Load Telescope extension for snippets
+        pcall(require("telescope").load_extension, "luasnip")
 
         cmp.setup({
             snippet = {
@@ -28,10 +41,12 @@ return {
                 ["<CR>"] = cmp.mapping.confirm({ select = true }),
             }),
 
-            sources = {
+            sources = cmp.config.sources({
                 { name = "nvim_lsp" },
                 { name = "luasnip" },
-            },
+                { name = "buffer" },
+                { name = "path" },
+            }),
 
             formatting = {
                 format = lspkind.cmp_format({
@@ -39,7 +54,6 @@ return {
                     maxwidth = 50
                 }),
             },
-
 
             sorting = {
                 priority_weight = 2,
@@ -79,5 +93,25 @@ return {
                 },
             }
         })
+
+        -- Setup for command line completion
+        cmp.setup.cmdline("/", {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = {
+                { name = "buffer" }
+            }
+        })
+
+        cmp.setup.cmdline(":", {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = cmp.config.sources({
+                { name = "path" }
+            }, {
+                { name = "cmdline" }
+            })
+        })
+
+        -- Optional: Keybinding to open telescope snippet browser
+        vim.keymap.set("n", "<leader>ss", "<cmd>Telescope luasnip<CR>", { desc = "Search snippets" })
     end,
 }
