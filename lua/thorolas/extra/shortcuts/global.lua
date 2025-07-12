@@ -1,4 +1,5 @@
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Stop Search Highlight' });
+
 vim.keymap.set('n', '<leader>o', "o<ESC>", { desc = 'Empty Line After' });
 vim.keymap.set('n', '<leader>O', "O<ESC>", { desc = 'Empty Line Before' });
 vim.keymap.set('n', '<leader>i', "o<ESC>O", { desc = 'Empty Surrounding' });
@@ -17,11 +18,6 @@ vim.keymap.set('n', '<C-right>', ':vertical resize -2<CR>', { desc = 'Spread Win
 vim.keymap.set('n', '<tab>', ':bnext<CR>', { desc = 'Go To Next Buffer', noremap = true, silent = true});
 vim.keymap.set('n', '<s-tab>', ':bprevious<CR>', { desc = 'Go To Previous Buffer', noremap = true, silent = true});
 
-vim.keymap.set('v', '<', '<gv', { desc = 'Unindent Selection', noremap = true, silent = true });
-vim.keymap.set('v', '>', '>gv', { desc = 'Indent Selection', noremap = true, silent = true });
-
-vim.keymap.set('v', '<a-j>', ':m \'>+<CR>==gv', { desc = 'Move Selection Down', noremap = true, silent = true });
-vim.keymap.set('v', '<a-k>', ':m \'<-2<CR>==gv', { desc = 'Move Selection Up', noremap = true, silent = true });
 
 vim.keymap.set('t', '<C-h>', '<C-\\><C-N><C-w>h', { desc = 'Move To Left Window', silent = true });
 vim.keymap.set('t', '<C-j>', '<C-\\><C-N><C-w>j', { desc = 'Move To Bottom Window', silent = true });

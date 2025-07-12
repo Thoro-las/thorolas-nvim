@@ -51,5 +51,3 @@ vim.opt.listchars = {
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
-
-vim.env.PATH = vim.env.PATH .. ":" .. os.getenv("HOME") .. "/.dotnet/tools"

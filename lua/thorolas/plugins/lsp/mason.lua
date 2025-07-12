@@ -6,5 +6,8 @@ return {
     config = function()
         require("mason").setup()
         require("mason-lspconfig").setup({ automatic_installation = true, });
+
+        local kw = require("thorolas.utility.keywords")
+        kw.command("<leader>m", "Mason", "Mason Explorer")
     end,
 }
