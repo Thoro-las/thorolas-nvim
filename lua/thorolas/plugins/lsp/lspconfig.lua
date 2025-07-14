@@ -27,5 +27,6 @@ return {
         kw.command("<leader>gi", "lua vim.lsp.buf.implementation()", "Show Implementation")
         kw.command("<leader>gs", "lua vim.lsp.buf.document_symbol()", "Show Document Symbol")
         kw.command("<leader>gz", "lua vim.lsp.buf.references()", "Show References")
+        kw.command("<leader>gc", "lua vim.lsp.buf.definition()", "Go To Definition" )
     end,
 }

@@ -10,7 +10,6 @@ return {
         "saadparwaiz1/cmp_luasnip",
         "onsails/lspkind.nvim",
 
-        -- Snippet helpers
         "rafamadriz/friendly-snippets",
         "benfowler/telescope-luasnip.nvim"
     },
@@ -21,10 +20,7 @@ return {
         local lspkind = require("lspkind")
         local compare = require("cmp.config.compare")
 
-        -- Load VSCode-style snippets (friendly-snippets)
         require("luasnip.loaders.from_vscode").lazy_load()
-
-        -- Load Telescope extension for snippets
         pcall(require("telescope").load_extension, "luasnip")
 
         cmp.setup({
@@ -61,14 +57,14 @@ return {
                     function(entry1, entry2)
                         local kind_priority = {
                             Field = 1,
-                            Variable = 2,
-                            Function = 3,
-                            Constant = 4,
-                            Method = 5,
-                            Struct = 6,
-                            Class = 7,
-                            Module = 8,
-                            Keyword = 9,
+                            Keyword = 2,
+                            Variable = 3,
+                            Function = 4,
+                            Constant = 5,
+                            Method = 6,
+                            Struct = 7,
+                            Class = 8,
+                            Module = 9,
                             Text = 10,
                         }
 
