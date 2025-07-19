@@ -17,7 +17,6 @@ return {
             filetype = {
                 haskell = "runghc $file && exit",
 
-
                 pde = function()
                     local file = vim.fn.expand("%:p")
                     local dir = vim.fn.fnamemodify(file, ":h")

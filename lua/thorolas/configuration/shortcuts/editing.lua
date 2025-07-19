@@ -4,8 +4,8 @@ kw.mapd("n", "<leader>w", "w", "Write & Save")
 
 kw.mapsnr("v", "<", "<gv", "Unindent Selection")
 kw.mapsnr("v", ">", ">gv", "Indent Selection")
-kw.mapsnr("v", "<a-j>", ":m \">+<CR>==gv", "Move Selection Down")
-kw.mapsnr("v", "<a-k>", ":m \"<-2<CR>==gv", "Move Selection Up")
+kw.mapsnr("v", "<a-j>", ":m '>+<CR>==gv", "Move Selection Down")
+kw.mapsnr("v", "<a-k>", ":m '<-2<CR>==gv", "Move Selection Up")
 
 kw.mapsnr("n", "<Esc>", "<cmd>nohlsearch<CR>", "Stop Search Highlight");
 
