@@ -32,7 +32,26 @@ return {
                 fsharp = runcode,
                 fs = runcode,
                 fsx = runcode,
+            },
+            mode = 'term',
+            term = {
+                position = "vert",
+                size = 50,
             }
+        })
+
+
+        vim.api.nvim_create_autocmd("TermClose", {
+            callback = function()
+                -- Instead of closing terminal window on exit,
+                -- just switch terminal to normal mode and keep window open
+                local bufnr = vim.api.nvim_get_current_buf()
+                -- Do nothing or optionally send an Enter key to keep terminal open
+                -- vim.api.nvim_input("<CR>")
+
+                -- Another approach: do not close window, just leave terminal buffer open
+                -- If you want, create a mapping to close manually later
+            end,
         })
     end
 }

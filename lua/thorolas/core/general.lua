@@ -51,3 +51,5 @@ vim.opt.listchars = {
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
+
+vim.opt.runtimepath:append("/home/thorolas/.nvm/versions/node/v24.2.0/bin")
